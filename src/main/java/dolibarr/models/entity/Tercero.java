@@ -2,7 +2,8 @@ package dolibarr.models.entity;
 
 public class Tercero {
 
-    public String NombreSimple;
+    private int id;
+    private String NombreSimple;
     private String Tipo;
     private String direccion;
     private int CodPostal;
@@ -14,6 +15,14 @@ public class Tercero {
     private String tipoTercero;
     private String FormaJuridica;
     private String inconterms;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getNombreSimple() {
         return NombreSimple;
