@@ -15,9 +15,9 @@ import java.sql.SQLException;
  */
 public class ConexionBaseDatos {
     
-    private static final String JDBC_URL = "jdbc:mysql://localhost/dolibar?useSSL=false&serverTimezone=America/Mexico_City&allowPublicKeyRetrieval=true";
+    private static final String JDBC_URL = "jdbc:mysql://localhost/dolibarr?useSSL=false&serverTimezone=America/Mexico_City&allowPublicKeyRetrieval=true";
     private static final String JDBC_USER = "root";
-    private static final String JDBC_PASSWORD = "admin";
+    private static final String JDBC_PASSWORD = "Vaginalluftwafe1";
     
     private static Connection conn;
     
