@@ -168,4 +168,11 @@ public class Contacto {
         this.fechaNacimiento = fechaNacimiento;
     }
 
+    @Override
+    public String toString() {
+        return "Contacto id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", tercero=" + tercero + ", titulo=" + titulo + ", puestoTrabajo=" + puestoTrabajo + ", direccion=" + direccion + ", codigoPostal=" + codigoPostal + ", ciudad=" + ciudad + ", pais=" + pais + ", estado=" + estado + ", telTrabajo=" + telTrabajo + ", celular=" + celular + ", email=" + email + ", correoMasivo=" + correoMasivo + ", categorias=" + categorias + ", fechaNacimiento=" + fechaNacimiento;
+    }
+    
+    
+
 }

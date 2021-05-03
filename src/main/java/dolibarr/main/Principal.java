@@ -96,10 +96,14 @@ public class Principal {
             t3.setInconterms("sdfsdfs");
             terc.guardar(t3);
              */
+            
+            List<Tercero> terceros = terc.listar();
+            terceros.stream().forEachOrdered(x -> System.out.println(x));
 
             Repositorio<Contacto> contacs = new ContactoRepositorioImpl();
             System.out.println("=====================insertar contacto =====================");
 
+            /*
             Contacto con1 = new Contacto();
             con1.setApellido("Prueba");
             con1.setNombre("prueba 1");
@@ -168,7 +172,10 @@ public class Principal {
 
             c3.setFechaNacimiento(new Date());
             contacs.guardar(c3);
-
+             */
+            
+            List<Contacto> contactos = contacs.listar();
+            contacs.listar().stream().forEach(x -> System.out.println(x));
         } catch (Exception e) {
             e.printStackTrace();
         }
