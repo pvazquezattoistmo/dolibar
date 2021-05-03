@@ -33,18 +33,18 @@ public class TerceroRepositorioImpl implements Repositorio<Tercero> {
 
             while (rss.next()) {
                 Tercero ter = new Tercero();
-                 ter.setId_tercero(rss.getInt("id_tercero"));
-                 ter.setNombreSimple(rss.getString("nombre_terceros"));
-                 ter.setTipoTercero(rss.getString("tipo_terceros"));
-                 ter.setDireccion(rss.getString("direccion_terceros"));
-                 ter.setCodPostal(rss.getString("codigopostal_terceros"));
-                 ter.setPais(rss.getString("pais_terceros"));
-                 ter.setProvincia(rss.getString("provincia_terceros"));
-                 ter.setRfc(rss.getString("rfc_terceros"));
-                 ter.setRpimms(rss.getString("rpimms_terceros"));
-                 ter.setImpuesto(rss.getString("impuesto_terceros"));
-                 ter.setFormaJuridica(rss.getString("formajuridica_terceros"));
-                
+                ter.setId_tercero(rss.getInt("id_tercero"));
+                ter.setNombreSimple(rss.getString("nombre_terceros"));
+                ter.setTipoTercero(rss.getString("tipo_terceros"));
+                ter.setDireccion(rss.getString("direccion_terceros"));
+                ter.setCodPostal(rss.getString("codigopostal_terceros"));
+                ter.setPais(rss.getString("pais_terceros"));
+                ter.setProvincia(rss.getString("provincia_terceros"));
+                ter.setRfc(rss.getString("rfc_terceros"));
+                ter.setRpimms(rss.getString("rpimms_terceros"));
+                ter.setImpuesto(rss.getString("impuesto_terceros"));
+                ter.setFormaJuridica(rss.getString("formajuridica_terceros"));
+
                 Tert.add(ter);
             }
 
@@ -57,9 +57,9 @@ public class TerceroRepositorioImpl implements Repositorio<Tercero> {
     @Override
     public Tercero buscarId(int id) {
         Tercero ter = null;
-        try (PreparedStatement pst = getConnection().prepareStatement("\"SELECT * FROM categoriasetiquetas WHERE id_terceros = ?\"")){
-           pst.setInt(1, id);
-           ResultSet rss = pst.executeQuery();
+        try (PreparedStatement pst = getConnection().prepareStatement("\"SELECT * FROM categoriasetiquetas WHERE id_terceros = ?\"")) {
+            pst.setInt(1, id);
+            ResultSet rss = pst.executeQuery();
             if (rss.next()) {
                 ter = new Tercero();
                 ter.setId_tercero(rss.getInt("id_tercero"));
@@ -73,33 +73,33 @@ public class TerceroRepositorioImpl implements Repositorio<Tercero> {
                 ter.setRpimms(rss.getString("rpimms_terceros"));
                 ter.setImpuesto(rss.getString("impuesto_terceros"));
                 ter.setFormaJuridica(rss.getString("formajuridica_terceros"));
-                
+
             }
-           rss.close();
-           
+            rss.close();
+
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
-        return  ter;
+        return ter;
     }
 
     @Override
     public void guardar(Tercero t) {
         String sql;
-
+        
         if (t.getId() == 0) {
             sql = "INSERT INTO terceros(nombre_terceros, tipo_terceros, direccion_terceros, codigopostal_terceros, "
                     + "pais_terceros, provincia_terceros, rfc_terceros, rpimss_terceros, impuesto_terceros, "
                     + "formaJuridica_terceros, incoterms_terceros) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         } else {
-            sql = "UPDATE terceros SET nombre_terceros = ?, SET tipo_terceros = ? "
+            sql = "UPDATE terceros SET nombre_terceros = ?, SET tipo_terceros = ?, "
                     + " SET direccion_terceros = ?,  SET codigopostal_terceros = ?,  SET pais_terceros = ?,"
                     + " SET provincia_terceros = ?,  SET rfc_terceros = ?,  SET rpimss_terceros = ?,"
                     + " SET impuesto_terceros = ?,  SET formaJuridica_terceros = ?,  SET incoterms_terceros = ?";
         }
-
+        System.out.println("El codigo a ejeciutar es " + sql);
         try (PreparedStatement stm = getConnection().prepareStatement(sql)) {
-
+            System.out.println("entramos");
             stm.setString(1, t.getNombreSimple());
             stm.setString(2, t.getTipoTercero());
             stm.setString(3, t.getDireccion());
@@ -112,7 +112,7 @@ public class TerceroRepositorioImpl implements Repositorio<Tercero> {
             stm.setString(10, t.getFormaJuridica());
             stm.setString(11, t.getInconterms());
 
-            stm.executeUpdate();
+            System.out.println(stm.executeUpdate());
 
         } catch (SQLException ex) {
 

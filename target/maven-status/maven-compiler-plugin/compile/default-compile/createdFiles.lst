@@ -1,8 +1,0 @@
-dolibarr\models\entity\Tercero.class
-dolibarr\models\entity\Cliente.class
-dolibarr\jdbc\ConexionBaseDatos.class
-dolibarr\models\entity\EtiquetaCategoria.class
-dolibarr\controller\TerceroController.class
-dolibarr\models\entity\Contacto.class
-dolibarr\main\Principal.class
-dolibarr\models\entity\Proveedor.class
