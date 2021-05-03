@@ -4,14 +4,13 @@ public class Tercero {
 
     private int id;
     private String NombreSimple;
-    private String Tipo;
     private String direccion;
-    private int CodPostal;
+    private String CodPostal;
     private String pais;
     private String provincia;
     private String rfc;
     private String rpimms;
-    private int impuesto;
+    private String impuesto;
     private String tipoTercero;
     private String FormaJuridica;
     private String inconterms;
@@ -28,15 +27,11 @@ public class Tercero {
         return NombreSimple;
     }
 
-    public String getTipo() {
-        return Tipo;
-    }
-
     public String getDireccion() {
         return direccion;
     }
 
-    public int getCodPostal() {
+    public String getCodPostal() {
         return CodPostal;
     }
 
@@ -56,7 +51,7 @@ public class Tercero {
         return rpimms;
     }
 
-    public int getImpuesto() {
+    public String getImpuesto() {
         return impuesto;
     }
 
@@ -76,15 +71,11 @@ public class Tercero {
         this.NombreSimple = NombreSimple;
     }
 
-    public void setTipo(String Tipo) {
-        this.Tipo = Tipo;
-    }
-
     public void setDireccion(String direccion) {
         this.direccion = direccion;
     }
 
-    public void setCodPostal(int CodPostal) {
+    public void setCodPostal(String CodPostal) {
         this.CodPostal = CodPostal;
     }
 
@@ -104,7 +95,7 @@ public class Tercero {
         this.rpimms = rpimms;
     }
 
-    public void setImpuesto(int impuesto) {
+    public void setImpuesto(String impuesto) {
         this.impuesto = impuesto;
     }
 
