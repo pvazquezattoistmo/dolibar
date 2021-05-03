@@ -85,8 +85,9 @@ public class TerceroRepositorioImpl implements Repositorio<Tercero> {
 
     @Override
     public void guardar(Tercero t) {
+
         String sql;
-        
+
         if (t.getId() == 0) {
             sql = "INSERT INTO terceros(nombre_terceros, tipo_terceros, direccion_terceros, codigopostal_terceros, "
                     + "pais_terceros, provincia_terceros, rfc_terceros, rpimss_terceros, impuesto_terceros, "
@@ -97,8 +98,10 @@ public class TerceroRepositorioImpl implements Repositorio<Tercero> {
                     + " SET provincia_terceros = ?,  SET rfc_terceros = ?,  SET rpimss_terceros = ?,"
                     + " SET impuesto_terceros = ?,  SET formaJuridica_terceros = ?,  SET incoterms_terceros = ?";
         }
-        System.out.println("El codigo a ejeciutar es " + sql);
+        System.out.println("El codigo a ejecutar es " + sql);
+
         try (PreparedStatement stm = getConnection().prepareStatement(sql)) {
+
             System.out.println("entramos");
             stm.setString(1, t.getNombreSimple());
             stm.setString(2, t.getTipoTercero());
@@ -112,11 +115,12 @@ public class TerceroRepositorioImpl implements Repositorio<Tercero> {
             stm.setString(10, t.getFormaJuridica());
             stm.setString(11, t.getInconterms());
 
-            System.out.println(stm.executeUpdate());
-
+            stm.executeUpdate();
+            
         } catch (SQLException ex) {
-
+            ex.printStackTrace();
         }
+
     }
 
     @Override

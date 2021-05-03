@@ -49,4 +49,9 @@ public class EtiquetaCategoria {
         this.tipo = tipo;
     }
 
+    @Override
+    public String toString() {
+        return "EtiquetaCategoria" + id + ", referencia=" + referencia + ", descripcion=" + descripcion + ", tipo=" + tipo;
+    }
+
 }

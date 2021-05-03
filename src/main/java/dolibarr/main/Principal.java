@@ -12,6 +12,7 @@ import dolibarr.repository.EtiquetaRepositorioImpl;
 import dolibarr.repository.Repositorio;
 import dolibarr.repository.TerceroRepositorioImpl;
 import java.sql.Connection;
+import java.util.List;
 
 /**
  *
@@ -21,10 +22,10 @@ public class Principal {
 
     public static void main(String[] args) {
         try (Connection conn = ConexionBaseDatos.getInstance()) {
-            /*
+
             Repositorio<EtiquetaCategoria> repo = new EtiquetaRepositorioImpl();
             System.out.println("=====================insertar etiqueta =====================");
-
+            /*
             EtiquetaCategoria c1 = new EtiquetaCategoria();
             c1.setReferencia("123");
             c1.setDescripcion("prueba 1");
@@ -44,10 +45,9 @@ public class Principal {
             repo.guardar(c3);
             
              */
+            List<EtiquetaCategoria> categorias = repo.listar();
+            categorias.stream().forEach(x -> System.out.println(x));
 
-        } catch (Exception e) {
-        }
-        try (Connection conn = ConexionBaseDatos.getInstance()) {
             Repositorio<Tercero> terc = new TerceroRepositorioImpl();
             System.out.println("=====================insertar tercero =====================");
 
@@ -61,7 +61,8 @@ public class Principal {
             t1.setRfc("TGYWIEXXXX");
             t1.setRpimms("IGKSJFSD");
             t1.setImpuesto("52.6");
-            t1.setFormaJuridica("djdklalñ");
+            t1.setFormaJuridica("djdklal");
+            t1.setInconterms("sdfsdfs");
             terc.guardar(t1);
 
             Tercero t2 = new Tercero();
@@ -74,7 +75,8 @@ public class Principal {
             t2.setRfc("TGYWIEXXXX");
             t2.setRpimms("IGKSJFSD");
             t2.setImpuesto("52.6");
-            t2.setFormaJuridica("djdklalñ");
+            t2.setFormaJuridica("djdklal");
+            t2.setInconterms("sdfsdfs");
             terc.guardar(t2);
 
             Tercero t3 = new Tercero();
@@ -86,11 +88,13 @@ public class Principal {
             t3.setProvincia("LuagrPrueba");
             t3.setRfc("TGYWIEXXXX");
             t3.setRpimms("IGKSJFSD");
-            t3.setImpuesto("");
-            t3.setFormaJuridica("djdklalñ");
+            t3.setImpuesto("dfsd");
+            t3.setFormaJuridica("djdklal");
+            t3.setInconterms("sdfsdfs");
             terc.guardar(t3);
-        } catch (Exception e) {
 
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }
