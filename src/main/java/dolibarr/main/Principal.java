@@ -28,7 +28,7 @@ public class Principal {
 
             Repositorio<EtiquetaCategoria> cat = new EtiquetaRepositorioImpl();
             System.out.println("=====================insertar etiqueta =====================");
-            /*
+            
             EtiquetaCategoria c1 = new EtiquetaCategoria();
             c1.setReferencia("123");
             c1.setDescripcion("prueba 1");
@@ -47,13 +47,13 @@ public class Principal {
             c3.setTipo("proveedor");
             cat.guardar(c3);
             
-             */
+             
             List<EtiquetaCategoria> categorias = cat.listar();
             categorias.stream().forEach(x -> System.out.println(x));
 
             Repositorio<Tercero> terc = new TerceroRepositorioImpl();
             System.out.println("=====================insertar tercero =====================");
-            /*
+            
             Tercero t1 = new Tercero();
             t1.setNombreSimple("Jesus Alberto");
             t1.setTipoTercero("prueba2");
@@ -95,7 +95,7 @@ public class Principal {
             t3.setFormaJuridica("djdklal");
             t3.setInconterms("sdfsdfs");
             terc.guardar(t3);
-             */
+            
             
             List<Tercero> terceros = terc.listar();
             terceros.stream().forEachOrdered(x -> System.out.println(x));
@@ -103,7 +103,7 @@ public class Principal {
             Repositorio<Contacto> contacs = new ContactoRepositorioImpl();
             System.out.println("=====================insertar contacto =====================");
 
-            /*
+            
             Contacto con1 = new Contacto();
             con1.setApellido("Prueba");
             con1.setNombre("prueba 1");
@@ -127,52 +127,52 @@ public class Principal {
             con1.setFechaNacimiento(new Date());
             contacs.guardar(con1);
 
-            Contacto c2 = new Contacto();
-            c2.setApellido("123");
-            c2.setNombre("prueba 1");
+            Contacto co2 = new Contacto();
+            co2.setApellido("123");
+            co2.setNombre("prueba 1");
 
-            c2.setTercero(terc.buscarId(2));
+            co2.setTercero(terc.buscarId(2));
 
-            c2.setTitulo("sdfdf");
-            c2.setPuestoTrabajo("sdfsdf");
-            c2.setDireccion("sdfsdf");
-            c2.setCodigoPostal("sdfsf");
-            c2.setCiudad("sdfsdf");
-            c2.setPais("sdfsdf");
-            c2.setEstado("sdfsdf");
-            c2.setTelTrabajo("sdfsdf");
-            c2.setCelular("sdfsdf");
-            c2.setEmail("sdfsdf");
-            c2.isCorreoMasivo();
+            co2.setTitulo("sdfdf");
+            co2.setPuestoTrabajo("sdfsdf");
+            co2.setDireccion("sdfsdf");
+            co2.setCodigoPostal("sdfsf");
+            co2.setCiudad("sdfsdf");
+            co2.setPais("sdfsdf");
+            co2.setEstado("sdfsdf");
+            co2.setTelTrabajo("sdfsdf");
+            co2.setCelular("sdfsdf");
+            co2.setEmail("sdfsdf");
+            co2.isCorreoMasivo();
 
-            c2.setCategorias(cat.buscarId(2));
+            co2.setCategorias(cat.buscarId(2));
 
-            c2.setFechaNacimiento(new Date());
-            contacs.guardar(c2);
+            co2.setFechaNacimiento(new Date());
+            contacs.guardar(co2);
 
-            Contacto c3 = new Contacto();
-            c3.setApellido("123");
-            c3.setNombre("prueba 1");
+            Contacto co3 = new Contacto();
+            co3.setApellido("123");
+            co3.setNombre("prueba 1");
 
-            c3.setTercero(terc.buscarId(3));
+            co3.setTercero(terc.buscarId(3));
 
-            c3.setTitulo("sdfdf");
-            c3.setPuestoTrabajo("sdfsdf");
-            c3.setDireccion("dfsdfs");
-            c3.setCodigoPostal("sdfsdf");
-            c3.setCiudad("sdfsdfsfd");
-            c3.setPais("sdfsfddsf");
-            c3.setEstado("sdfsdf");
-            c3.setTelTrabajo("sdfsfds");
-            c3.setCelular("sdfsdfs");
-            c3.setEmail("sdfsdf");
-            c3.isCorreoMasivo();
+            co3.setTitulo("sdfdf");
+            co3.setPuestoTrabajo("sdfsdf");
+            co3.setDireccion("dfsdfs");
+            co3.setCodigoPostal("sdfsdf");
+            co3.setCiudad("sdfsdfsfd");
+            co3.setPais("sdfsfddsf");
+            co3.setEstado("sdfsdf");
+            co3.setTelTrabajo("sdfsfds");
+            co3.setCelular("sdfsdfs");
+            co3.setEmail("sdfsdf");
+            co3.isCorreoMasivo();
 
-            c3.setCategorias(cat.buscarId(3));
+            co3.setCategorias(cat.buscarId(3));
 
-            c3.setFechaNacimiento(new Date());
-            contacs.guardar(c3);
-             */
+            co3.setFechaNacimiento(new Date());
+            contacs.guardar(co3);
+            
             
             List<Contacto> contactos = contacs.listar();
             contactos.stream().forEach(x -> System.out.println(x));
