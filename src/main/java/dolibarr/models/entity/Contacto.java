@@ -14,6 +14,7 @@ import java.util.List;
  */
 public class Contacto {
 
+    private int id;
     private String nombre;
     private String apellido;
     private Tercero tercero;
@@ -30,6 +31,14 @@ public class Contacto {
     private boolean correoMasivo;
     private EtiquetaCategoria categorias;
     private Date fechaNacimiento;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getNombre() {
         return nombre;

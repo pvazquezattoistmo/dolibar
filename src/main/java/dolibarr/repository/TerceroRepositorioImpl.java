@@ -57,12 +57,12 @@ public class TerceroRepositorioImpl implements Repositorio<Tercero> {
     @Override
     public Tercero buscarId(int id) {
         Tercero ter = null;
-        try (PreparedStatement pst = getConnection().prepareStatement("\"SELECT * FROM categoriasetiquetas WHERE id_terceros = ?\"")) {
+        try (PreparedStatement pst = getConnection().prepareStatement("SELECT * FROM terceros WHERE id_terceros = ?")) {
             pst.setInt(1, id);
             ResultSet rss = pst.executeQuery();
             if (rss.next()) {
                 ter = new Tercero();
-                ter.setId_tercero(rss.getInt("id_tercero"));
+                ter.setId_tercero(rss.getInt("id_terceros"));
                 ter.setNombreSimple(rss.getString("nombre_terceros"));
                 ter.setTipoTercero(rss.getString("tipo_terceros"));
                 ter.setDireccion(rss.getString("direccion_terceros"));
@@ -116,7 +116,7 @@ public class TerceroRepositorioImpl implements Repositorio<Tercero> {
             stm.setString(11, t.getInconterms());
 
             stm.executeUpdate();
-            
+
         } catch (SQLException ex) {
             ex.printStackTrace();
         }

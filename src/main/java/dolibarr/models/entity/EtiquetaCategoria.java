@@ -10,8 +10,7 @@ package dolibarr.models.entity;
  * @author PC
  */
 public class EtiquetaCategoria {
-    //hola
-
+    
     private int id;
     private String referencia;
     private String descripcion;

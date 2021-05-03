@@ -6,12 +6,15 @@
 package dolibarr.main;
 
 import dolibarr.jdbc.ConexionBaseDatos;
+import dolibarr.models.entity.Contacto;
 import dolibarr.models.entity.EtiquetaCategoria;
 import dolibarr.models.entity.Tercero;
+import dolibarr.repository.ContactoRepositorioImpl;
 import dolibarr.repository.EtiquetaRepositorioImpl;
 import dolibarr.repository.Repositorio;
 import dolibarr.repository.TerceroRepositorioImpl;
 import java.sql.Connection;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -23,34 +26,34 @@ public class Principal {
     public static void main(String[] args) {
         try (Connection conn = ConexionBaseDatos.getInstance()) {
 
-            Repositorio<EtiquetaCategoria> repo = new EtiquetaRepositorioImpl();
+            Repositorio<EtiquetaCategoria> cat = new EtiquetaRepositorioImpl();
             System.out.println("=====================insertar etiqueta =====================");
             /*
             EtiquetaCategoria c1 = new EtiquetaCategoria();
             c1.setReferencia("123");
             c1.setDescripcion("prueba 1");
             c1.setTipo("proveedor");
-            repo.guardar(c1);
+            cat.guardar(c1);
 
             EtiquetaCategoria c2 = new EtiquetaCategoria();
             c2.setReferencia("123");
             c2.setDescripcion("prueba 1");
             c2.setTipo("proveedor");
-            repo.guardar(c2);
+            cat.guardar(c2);
 
             EtiquetaCategoria c3 = new EtiquetaCategoria();
             c3.setReferencia("123");
             c3.setDescripcion("prueba 1");
             c3.setTipo("proveedor");
-            repo.guardar(c3);
+            cat.guardar(c3);
             
              */
-            List<EtiquetaCategoria> categorias = repo.listar();
+            List<EtiquetaCategoria> categorias = cat.listar();
             categorias.stream().forEach(x -> System.out.println(x));
 
             Repositorio<Tercero> terc = new TerceroRepositorioImpl();
             System.out.println("=====================insertar tercero =====================");
-
+            /*
             Tercero t1 = new Tercero();
             t1.setNombreSimple("Jesus Alberto");
             t1.setTipoTercero("prueba2");
@@ -92,6 +95,79 @@ public class Principal {
             t3.setFormaJuridica("djdklal");
             t3.setInconterms("sdfsdfs");
             terc.guardar(t3);
+             */
+
+            Repositorio<Contacto> contacs = new ContactoRepositorioImpl();
+            System.out.println("=====================insertar contacto =====================");
+
+            Contacto con1 = new Contacto();
+            con1.setApellido("Prueba");
+            con1.setNombre("prueba 1");
+
+            con1.setTercero(terc.buscarId(1));
+
+            con1.setTitulo("prueba");
+            con1.setPuestoTrabajo("prueba");
+            con1.setDireccion("prueba");
+            con1.setCodigoPostal("prueba");
+            con1.setCiudad("prueba");
+            con1.setPais("prueba");
+            con1.setEstado("prueba");
+            con1.setTelTrabajo("prueba");
+            con1.setCelular("prueba");
+            con1.setEmail("prueba");
+            con1.isCorreoMasivo();
+
+            con1.setCategorias(cat.buscarId(1));
+
+            con1.setFechaNacimiento(new Date());
+            contacs.guardar(con1);
+
+            Contacto c2 = new Contacto();
+            c2.setApellido("123");
+            c2.setNombre("prueba 1");
+
+            c2.setTercero(terc.buscarId(2));
+
+            c2.setTitulo("");
+            c2.setPuestoTrabajo("");
+            c2.setDireccion("");
+            c2.setCodigoPostal("");
+            c2.setCiudad("");
+            c2.setPais("");
+            c2.setEstado("");
+            c2.setTelTrabajo("");
+            c2.setCelular("");
+            c2.setEmail("");
+            c2.isCorreoMasivo();
+
+            c2.setCategorias(cat.buscarId(2));
+
+            c2.setFechaNacimiento(new Date());
+            contacs.guardar(c2);
+
+            Contacto c3 = new Contacto();
+            c3.setApellido("123");
+            c3.setNombre("prueba 1");
+
+            c3.setTercero(terc.buscarId(3));
+
+            c3.setTitulo("");
+            c3.setPuestoTrabajo("");
+            c3.setDireccion("");
+            c3.setCodigoPostal("");
+            c3.setCiudad("");
+            c3.setPais("");
+            c3.setEstado("");
+            c3.setTelTrabajo("");
+            c3.setCelular("");
+            c3.setEmail("");
+            c3.isCorreoMasivo();
+
+            c3.setCategorias(cat.buscarId(3));
+
+            c3.setFechaNacimiento(new Date());
+            contacs.guardar(c3);
 
         } catch (Exception e) {
             e.printStackTrace();
