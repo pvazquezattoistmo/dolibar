@@ -10,12 +10,12 @@ import dolibarr.models.entity.Contacto;
 import dolibarr.models.entity.EtiquetaCategoria;
 import dolibarr.models.entity.Tercero;
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -127,7 +127,7 @@ public class ContactoRepositorioImpl implements Repositorio<Contacto> {
             sql = "INSERT INTO contactos(nombre_contactos, apellido_contactos, id_tercero, titulo_contactos, "
                     + "puestoTrabajo_contactos, direccion_contactos, codigoPostal_contactos, ciudad_contactos, "
                     + "pais_contactos, estado_contactos, telTrabajo_contactos, celular_contactos, email_contactos, "
-                    + "correoMasivo_contactos, fechanacimiento_contactos, etiqueta_contactos) "
+                    + "correoMasivo_contactos, etiqueta_contactos, fechanacimiento_contactos) "
                     + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         } else {
             sql = "UPDATE contacto SET apellido_contacto = ?, SET nombre_contacto = ? "
@@ -157,8 +157,10 @@ public class ContactoRepositorioImpl implements Repositorio<Contacto> {
             stm.setBoolean(14, t.isCorreoMasivo());
 
             stm.setInt(15, t.getCategorias().getId());
-
-            stm.setDate(16, (Date) t.getFechaNacimiento());
+            
+            Date date = new Date();
+            java.sql.Date data = new java.sql.Date(date.getTime());
+            stm.setDate(16, data);
 
             stm.executeUpdate();
 

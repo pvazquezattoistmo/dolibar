@@ -33,7 +33,7 @@ public class TerceroRepositorioImpl implements Repositorio<Tercero> {
 
             while (rss.next()) {
                 Tercero ter = new Tercero();
-                ter.setId_tercero(rss.getInt("id_tercero"));
+                ter.setId(rss.getInt("id_tercero"));
                 ter.setNombreSimple(rss.getString("nombre_terceros"));
                 ter.setTipoTercero(rss.getString("tipo_terceros"));
                 ter.setDireccion(rss.getString("direccion_terceros"));
@@ -62,7 +62,7 @@ public class TerceroRepositorioImpl implements Repositorio<Tercero> {
             ResultSet rss = pst.executeQuery();
             if (rss.next()) {
                 ter = new Tercero();
-                ter.setId_tercero(rss.getInt("id_terceros"));
+                ter.setId(rss.getInt("id_terceros"));
                 ter.setNombreSimple(rss.getString("nombre_terceros"));
                 ter.setTipoTercero(rss.getString("tipo_terceros"));
                 ter.setDireccion(rss.getString("direccion_terceros"));
@@ -70,7 +70,7 @@ public class TerceroRepositorioImpl implements Repositorio<Tercero> {
                 ter.setPais(rss.getString("pais_terceros"));
                 ter.setProvincia(rss.getString("provincia_terceros"));
                 ter.setRfc(rss.getString("rfc_terceros"));
-                ter.setRpimms(rss.getString("rpimms_terceros"));
+                ter.setRpimms(rss.getString("rpimss_terceros"));
                 ter.setImpuesto(rss.getString("impuesto_terceros"));
                 ter.setFormaJuridica(rss.getString("formajuridica_terceros"));
 

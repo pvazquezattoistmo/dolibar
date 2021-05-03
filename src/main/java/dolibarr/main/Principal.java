@@ -129,16 +129,16 @@ public class Principal {
 
             c2.setTercero(terc.buscarId(2));
 
-            c2.setTitulo("");
-            c2.setPuestoTrabajo("");
-            c2.setDireccion("");
-            c2.setCodigoPostal("");
-            c2.setCiudad("");
-            c2.setPais("");
-            c2.setEstado("");
-            c2.setTelTrabajo("");
-            c2.setCelular("");
-            c2.setEmail("");
+            c2.setTitulo("sdfdf");
+            c2.setPuestoTrabajo("sdfsdf");
+            c2.setDireccion("sdfsdf");
+            c2.setCodigoPostal("sdfsf");
+            c2.setCiudad("sdfsdf");
+            c2.setPais("sdfsdf");
+            c2.setEstado("sdfsdf");
+            c2.setTelTrabajo("sdfsdf");
+            c2.setCelular("sdfsdf");
+            c2.setEmail("sdfsdf");
             c2.isCorreoMasivo();
 
             c2.setCategorias(cat.buscarId(2));
@@ -152,16 +152,16 @@ public class Principal {
 
             c3.setTercero(terc.buscarId(3));
 
-            c3.setTitulo("");
-            c3.setPuestoTrabajo("");
-            c3.setDireccion("");
-            c3.setCodigoPostal("");
-            c3.setCiudad("");
-            c3.setPais("");
-            c3.setEstado("");
-            c3.setTelTrabajo("");
-            c3.setCelular("");
-            c3.setEmail("");
+            c3.setTitulo("sdfdf");
+            c3.setPuestoTrabajo("sdfsdf");
+            c3.setDireccion("dfsdfs");
+            c3.setCodigoPostal("sdfsdf");
+            c3.setCiudad("sdfsdfsfd");
+            c3.setPais("sdfsfddsf");
+            c3.setEstado("sdfsdf");
+            c3.setTelTrabajo("sdfsfds");
+            c3.setCelular("sdfsdfs");
+            c3.setEmail("sdfsdf");
             c3.isCorreoMasivo();
 
             c3.setCategorias(cat.buscarId(3));
