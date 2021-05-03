@@ -9,7 +9,10 @@ import dolibarr.jdbc.ConexionBaseDatos;
 import dolibarr.models.entity.Tercero;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -24,12 +27,60 @@ public class TerceroRepositorioImpl implements Repositorio<Tercero> {
 
     @Override
     public List<Tercero> listar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        List<Tercero> Tert = new ArrayList<>();
+        try (Statement stmt = getConnection().createStatement();
+                ResultSet rss = stmt.executeQuery("SELECT * FROM terceros")) {
+
+            while (rss.next()) {
+                Tercero ter = new Tercero();
+                 ter.setId_tercero(rss.getInt("id_tercero"));
+                 ter.setNombreSimple(rss.getString("nombre_terceros"));
+                 ter.setTipoTercero(rss.getString("tipo_terceros"));
+                 ter.setDireccion(rss.getString("direccion_terceros"));
+                 ter.setCodPostal(rss.getString("codigopostal_terceros"));
+                 ter.setPais(rss.getString("pais_terceros"));
+                 ter.setProvincia(rss.getString("provincia_terceros"));
+                 ter.setRfc(rss.getString("rfc_terceros"));
+                 ter.setRpimms(rss.getString("rpimms_terceros"));
+                 ter.setImpuesto(rss.getString("impuesto_terceros"));
+                 ter.setFormaJuridica(rss.getString("formajuridica_terceros"));
+                
+                Tert.add(ter);
+            }
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        return Tert;
     }
 
     @Override
     public Tercero buscarId(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Tercero ter = null;
+        try (PreparedStatement pst = getConnection().prepareStatement("\"SELECT * FROM categoriasetiquetas WHERE id_terceros = ?\"")){
+           pst.setInt(1, id);
+           ResultSet rss = pst.executeQuery();
+            if (rss.next()) {
+                ter = new Tercero();
+                ter.setId_tercero(rss.getInt("id_tercero"));
+                ter.setNombreSimple(rss.getString("nombre_terceros"));
+                ter.setTipoTercero(rss.getString("tipo_terceros"));
+                ter.setDireccion(rss.getString("direccion_terceros"));
+                ter.setCodPostal(rss.getString("codigopostal_terceros"));
+                ter.setPais(rss.getString("pais_terceros"));
+                ter.setProvincia(rss.getString("provincia_terceros"));
+                ter.setRfc(rss.getString("rfc_terceros"));
+                ter.setRpimms(rss.getString("rpimms_terceros"));
+                ter.setImpuesto(rss.getString("impuesto_terceros"));
+                ter.setFormaJuridica(rss.getString("formajuridica_terceros"));
+                
+            }
+           rss.close();
+           
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        return  ter;
     }
 
     @Override
