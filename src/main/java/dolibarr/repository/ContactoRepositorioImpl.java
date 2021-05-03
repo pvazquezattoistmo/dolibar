@@ -88,8 +88,8 @@ public class ContactoRepositorioImpl implements Repositorio<Contacto> {
                 c.setNombre(rs.getString("nombre_contactos"));
 
                 Repositorio<Tercero> tercero = new TerceroRepositorioImpl();
-                tercero.buscarId(rs.getInt("id_tercero"));
-                c.setTercero((Tercero) tercero);
+                Tercero terco = tercero.buscarId(rs.getInt("id_tercero"));
+                c.setTercero(terco);
 
                 c.setTitulo(rs.getString("titulo_contactos"));
                 c.setPuestoTrabajo(rs.getString("puestoTrabajo_contactos"));
@@ -105,8 +105,8 @@ public class ContactoRepositorioImpl implements Repositorio<Contacto> {
                 c.setCorreoMasivo(rs.getBoolean("correoMasivo_contactos"));
 
                 Repositorio<EtiquetaCategoria> cat = new EtiquetaRepositorioImpl();
-                cat.buscarId(rs.getInt("etiqueta_contactos"));
-                c.setCategorias((EtiquetaCategoria) cat);
+                EtiquetaCategoria ec = cat.buscarId(rs.getInt("etiqueta_contactos"));
+                c.setCategorias(ec);
 
                 c.setFechaNacimiento(rs.getDate("fechanacimiento_contactos"));
 
