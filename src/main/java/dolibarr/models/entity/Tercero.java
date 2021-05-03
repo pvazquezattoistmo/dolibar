@@ -120,4 +120,12 @@ public class Tercero {
         this.inconterms = inconterms;
     }
 
+    public void setId_tercero(int aInt) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public int getId_tercero() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }
