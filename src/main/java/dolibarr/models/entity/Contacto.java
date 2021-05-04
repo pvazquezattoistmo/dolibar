@@ -6,7 +6,6 @@
 package dolibarr.models.entity;
 
 import java.util.Date;
-import java.util.List;
 
 /**
  *
@@ -172,7 +171,5 @@ public class Contacto {
     public String toString() {
         return "Contacto id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", tercero=" + tercero + ", titulo=" + titulo + ", puestoTrabajo=" + puestoTrabajo + ", direccion=" + direccion + ", codigoPostal=" + codigoPostal + ", ciudad=" + ciudad + ", pais=" + pais + ", estado=" + estado + ", telTrabajo=" + telTrabajo + ", celular=" + celular + ", email=" + email + ", correoMasivo=" + correoMasivo + ", categorias=" + categorias + ", fechaNacimiento=" + fechaNacimiento;
     }
-    
-    
 
 }

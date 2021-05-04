@@ -21,7 +21,6 @@ public class Cliente extends Tercero {
 
     public void setCatCliente(EtiquetaCategoria catCliente) {
         this.catCliente = catCliente;
-
     }
 
     public Tercero getTercero() {
@@ -30,6 +29,11 @@ public class Cliente extends Tercero {
 
     public void setTercero(Tercero tercero) {
         this.tercero = tercero;
+    }
+
+    @Override
+    public String toString() {
+        return "Cliente codCliente=" + codCliente + ", catCliente=" + catCliente + ", tercero=" + tercero;
     }
 
 }

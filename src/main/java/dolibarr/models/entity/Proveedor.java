@@ -39,4 +39,9 @@ public class Proveedor extends Tercero {
         this.tercero = tercero;
     }
 
+    @Override
+    public String toString() {
+        return "Proveedor CodigoProvedor=" + CodigoProvedor + ", Catprovedor=" + Catprovedor + ", CodBarras=" + CodBarras + ", tercero=" + tercero;
+    }
+
 }

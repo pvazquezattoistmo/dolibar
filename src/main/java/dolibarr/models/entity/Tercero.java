@@ -115,7 +115,5 @@ public class Tercero {
     public String toString() {
         return "Tercero id=" + id + ", NombreSimple=" + NombreSimple + ", direccion=" + direccion + ", CodPostal=" + CodPostal + ", pais=" + pais + ", provincia=" + provincia + ", rfc=" + rfc + ", rpimms=" + rpimms + ", impuesto=" + impuesto + ", tipoTercero=" + tipoTercero + ", FormaJuridica=" + FormaJuridica + ", inconterms=" + inconterms;
     }
-    
-    
 
 }

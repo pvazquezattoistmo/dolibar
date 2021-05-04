@@ -28,7 +28,7 @@ public class ProveedorRepositorioImp implements Repositorio<Proveedor> {
                 Proveedor p = new Proveedor();
                 p.setId(rs.getInt("id_proveedores"));
 
-                p.setCodigoProvedor(rs.getInt("codigo_proveedores"));
+                p.setCodigoProvedor(rs.getInt("codigo_proovedores"));
 
                 Repositorio<EtiquetaCategoria> cat = new EtiquetaRepositorioImpl();
                 EtiquetaCategoria ec = cat.buscarId(rs.getInt("categoria_proveedores"));

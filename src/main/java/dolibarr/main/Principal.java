@@ -6,10 +6,12 @@
 package dolibarr.main;
 
 import dolibarr.jdbc.ConexionBaseDatos;
+import dolibarr.models.entity.Cliente;
 import dolibarr.models.entity.Contacto;
 import dolibarr.models.entity.EtiquetaCategoria;
 import dolibarr.models.entity.Proveedor;
 import dolibarr.models.entity.Tercero;
+import dolibarr.repository.ClienteRepositorioImpl;
 import dolibarr.repository.ContactoRepositorioImpl;
 import dolibarr.repository.EtiquetaRepositorioImpl;
 import dolibarr.repository.ProveedorRepositorioImp;
@@ -179,13 +181,30 @@ public class Principal {
             contactos.stream().forEach(x -> System.out.println(x));
 
             Repositorio<Proveedor> prov = new ProveedorRepositorioImp();
-            
+            System.out.println("=====================insertar proveedor =====================");
+
+            /*
             Proveedor pro1 = new Proveedor();
             pro1.setCatprovedor(cat.buscarId(1));
             pro1.setCodBarras("3541643434");
             pro1.setTercero(terc.buscarId(1));
             prov.guardar(pro1);
+             */
+            List<Proveedor> provee = prov.listar();
+            provee.stream().forEach(x -> System.out.println(x));
 
+            Repositorio<Cliente> cliente = new ClienteRepositorioImpl();
+            System.out.println("=====================insertar cliente =====================");
+
+            /*
+            Cliente clie = new Cliente();
+            clie.setCodCliente(565);
+            clie.setCatCliente(cat.buscarId(2));
+            clie.setTercero(terc.buscarId(2));
+            cliente.guardar(clie);
+             */
+            List<Cliente> clien = cliente.listar();
+            clien.stream().forEach(x -> System.out.println(x));
         } catch (Exception e) {
             e.printStackTrace();
         }
