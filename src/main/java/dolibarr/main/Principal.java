@@ -176,6 +176,8 @@ public class Principal {
             
             List<Contacto> contactos = contacs.listar();
             contactos.stream().forEach(x -> System.out.println(x));
+            
+            
         } catch (Exception e) {
             e.printStackTrace();
         }
