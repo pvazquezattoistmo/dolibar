@@ -98,11 +98,9 @@ public class TerceroRepositorioImpl implements Repositorio<Tercero> {
                     + " SET provincia_terceros = ?,  SET rfc_terceros = ?,  SET rpimss_terceros = ?,"
                     + " SET impuesto_terceros = ?,  SET formaJuridica_terceros = ?,  SET incoterms_terceros = ?";
         }
-        System.out.println("El codigo a ejecutar es " + sql);
 
         try (PreparedStatement stm = getConnection().prepareStatement(sql)) {
 
-            System.out.println("entramos");
             stm.setString(1, t.getNombreSimple());
             stm.setString(2, t.getTipoTercero());
             stm.setString(3, t.getDireccion());
