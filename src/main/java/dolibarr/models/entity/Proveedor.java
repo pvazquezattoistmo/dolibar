@@ -5,6 +5,7 @@ public class Proveedor extends Tercero {
     private int CodigoProvedor;
     private EtiquetaCategoria Catprovedor;
     private String CodBarras;
+    private Tercero tercero;
 
     public int getCodigoProvedor() {
         return CodigoProvedor;
@@ -28,6 +29,14 @@ public class Proveedor extends Tercero {
 
     public void setCodBarras(String CodBarras) {
         this.CodBarras = CodBarras;
+    }
+
+    public Tercero getTercero() {
+        return tercero;
+    }
+
+    public void setTercero(Tercero tercero) {
+        this.tercero = tercero;
     }
 
 }

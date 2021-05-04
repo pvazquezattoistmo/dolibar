@@ -8,9 +8,11 @@ package dolibarr.main;
 import dolibarr.jdbc.ConexionBaseDatos;
 import dolibarr.models.entity.Contacto;
 import dolibarr.models.entity.EtiquetaCategoria;
+import dolibarr.models.entity.Proveedor;
 import dolibarr.models.entity.Tercero;
 import dolibarr.repository.ContactoRepositorioImpl;
 import dolibarr.repository.EtiquetaRepositorioImpl;
+import dolibarr.repository.ProveedorRepositorioImp;
 import dolibarr.repository.Repositorio;
 import dolibarr.repository.TerceroRepositorioImpl;
 import java.sql.Connection;
@@ -28,7 +30,7 @@ public class Principal {
 
             Repositorio<EtiquetaCategoria> cat = new EtiquetaRepositorioImpl();
             System.out.println("=====================insertar etiqueta =====================");
-            
+            /*
             EtiquetaCategoria c1 = new EtiquetaCategoria();
             c1.setReferencia("123");
             c1.setDescripcion("prueba 1");
@@ -46,14 +48,14 @@ public class Principal {
             c3.setDescripcion("prueba 1");
             c3.setTipo("proveedor");
             cat.guardar(c3);
-            
-             
+             */
+
             List<EtiquetaCategoria> categorias = cat.listar();
             categorias.stream().forEach(x -> System.out.println(x));
 
             Repositorio<Tercero> terc = new TerceroRepositorioImpl();
             System.out.println("=====================insertar tercero =====================");
-            
+            /*
             Tercero t1 = new Tercero();
             t1.setNombreSimple("Jesus Alberto");
             t1.setTipoTercero("prueba2");
@@ -96,14 +98,14 @@ public class Principal {
             t3.setInconterms("sdfsdfs");
             terc.guardar(t3);
             
-            
+             */
             List<Tercero> terceros = terc.listar();
             terceros.stream().forEachOrdered(x -> System.out.println(x));
 
             Repositorio<Contacto> contacs = new ContactoRepositorioImpl();
             System.out.println("=====================insertar contacto =====================");
 
-            
+            /*
             Contacto con1 = new Contacto();
             con1.setApellido("Prueba");
             con1.setNombre("prueba 1");
@@ -172,12 +174,18 @@ public class Principal {
 
             co3.setFechaNacimiento(new Date());
             contacs.guardar(co3);
-            
-            
+             */
             List<Contacto> contactos = contacs.listar();
             contactos.stream().forEach(x -> System.out.println(x));
+
+            Repositorio<Proveedor> prov = new ProveedorRepositorioImp();
             
-            
+            Proveedor pro1 = new Proveedor();
+            pro1.setCatprovedor(cat.buscarId(1));
+            pro1.setCodBarras("3541643434");
+            pro1.setTercero(terc.buscarId(1));
+            prov.guardar(pro1);
+
         } catch (Exception e) {
             e.printStackTrace();
         }
