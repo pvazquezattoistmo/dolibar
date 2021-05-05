@@ -1,5 +1,5 @@
 package dolibar.entity;
-
+//DIANA
 public class Cliente extends Tercero {
 
     private int codCliente;
