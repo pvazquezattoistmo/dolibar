@@ -19,6 +19,7 @@ public class ProveedorController {
     Repositorio<Proveedor> repositorio;
 
     public List<Proveedor> listado() {
+        repositorio = new ProveedorRepositorioImp();
         return repositorio.listar();
     }
 
@@ -28,6 +29,7 @@ public class ProveedorController {
     }
 
     public Proveedor buscarId(int id) {
+        repositorio = new ProveedorRepositorioImp();
         return repositorio.buscarId(id);
     }
 

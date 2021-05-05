@@ -19,7 +19,7 @@ public class EtiquetaController {
     Repositorio<EtiquetaCategoria> repositorio;
 
     public List<EtiquetaCategoria> listado() {
-
+        repositorio = new EtiquetaRepositorioImpl();
         return repositorio.listar();
     }
 
@@ -29,6 +29,7 @@ public class EtiquetaController {
     }
 
     public EtiquetaCategoria buscarId(int id) {
+        repositorio = new EtiquetaRepositorioImpl();
         return repositorio.buscarId(id);
     }
 

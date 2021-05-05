@@ -19,6 +19,7 @@ public class ContactoController {
     Repositorio<Contacto> repositorio;
 
     public List<Contacto> listado() {
+        repositorio = new ContactoRepositorioImpl();
         return repositorio.listar();
     }
 
@@ -28,6 +29,7 @@ public class ContactoController {
     }
 
     public Contacto buscarId(int id) {
+        repositorio = new ContactoRepositorioImpl();
         return repositorio.buscarId(id);
     }
 

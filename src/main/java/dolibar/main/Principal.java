@@ -17,7 +17,6 @@ import dolibar.entity.EtiquetaCategoria;
 import dolibar.entity.Proveedor;
 import dolibar.entity.Tercero;
 import java.sql.Connection;
-import java.util.Date;
 import java.util.List;
 
 /**

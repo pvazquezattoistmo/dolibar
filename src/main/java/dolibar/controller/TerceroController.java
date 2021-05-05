@@ -19,6 +19,7 @@ public class TerceroController {
     Repositorio<Tercero> repositorio;
 
     public List<Tercero> listado() {
+        repositorio = new TerceroRepositorioImpl();
         return repositorio.listar();
     }
 
@@ -28,6 +29,7 @@ public class TerceroController {
     }
 
     public Tercero buscarId(int id) {
+        repositorio = new TerceroRepositorioImpl();
         return repositorio.buscarId(id);
     }
 

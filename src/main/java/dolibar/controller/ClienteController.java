@@ -19,6 +19,7 @@ public class ClienteController {
     Repositorio<Cliente> repositorio;
 
     public List<Cliente> listado() {
+        repositorio = new ClienteRepositorioImpl();
         return repositorio.listar();
     }
 
@@ -28,6 +29,7 @@ public class ClienteController {
     }
 
     public Cliente buscarId(int id) {
+        repositorio = new ClienteRepositorioImpl();
         return repositorio.buscarId(id);
     }
 
