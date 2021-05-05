@@ -3,16 +3,16 @@ package dolibar.entity;
 public class Tercero {
 
     private int id;
-    private String NombreSimple;
+    private String nombreSimple;
     private String direccion;
-    private String CodPostal;
+    private String codPostal;
     private String pais;
     private String provincia;
     private String rfc;
     private String rpimms;
     private String impuesto;
     private String tipoTercero;
-    private String FormaJuridica;
+    private String formaJuridica;
     private String inconterms;
 
     public int getId() {
@@ -24,7 +24,7 @@ public class Tercero {
     }
 
     public String getNombreSimple() {
-        return NombreSimple;
+        return nombreSimple;
     }
 
     public String getDireccion() {
@@ -32,7 +32,7 @@ public class Tercero {
     }
 
     public String getCodPostal() {
-        return CodPostal;
+        return codPostal;
     }
 
     public String getPais() {
@@ -60,7 +60,7 @@ public class Tercero {
     }
 
     public String getFormaJuridica() {
-        return FormaJuridica;
+        return formaJuridica;
     }
 
     public String getInconterms() {
@@ -68,7 +68,7 @@ public class Tercero {
     }
 
     public void setNombreSimple(String NombreSimple) {
-        this.NombreSimple = NombreSimple;
+        this.nombreSimple = NombreSimple;
     }
 
     public void setDireccion(String direccion) {
@@ -76,7 +76,7 @@ public class Tercero {
     }
 
     public void setCodPostal(String CodPostal) {
-        this.CodPostal = CodPostal;
+        this.codPostal = CodPostal;
     }
 
     public void setPais(String pais) {
@@ -104,7 +104,7 @@ public class Tercero {
     }
 
     public void setFormaJuridica(String FormaJuridica) {
-        this.FormaJuridica = FormaJuridica;
+        this.formaJuridica = FormaJuridica;
     }
 
     public void setInconterms(String inconterms) {
@@ -113,7 +113,7 @@ public class Tercero {
 
     @Override
     public String toString() {
-        return "Tercero id=" + id + ", NombreSimple=" + NombreSimple + ", direccion=" + direccion + ", CodPostal=" + CodPostal + ", pais=" + pais + ", provincia=" + provincia + ", rfc=" + rfc + ", rpimms=" + rpimms + ", impuesto=" + impuesto + ", tipoTercero=" + tipoTercero + ", FormaJuridica=" + FormaJuridica + ", inconterms=" + inconterms;
+        return "Tercero id=" + id + ", nombreSimple=" + nombreSimple + ", direccion=" + direccion + ", codPostal=" + codPostal + ", pais=" + pais + ", provincia=" + provincia + ", rfc=" + rfc + ", rpimms=" + rpimms + ", impuesto=" + impuesto + ", tipoTercero=" + tipoTercero + ", formaJuridica=" + formaJuridica + ", inconterms=" + inconterms;
     }
 
 }

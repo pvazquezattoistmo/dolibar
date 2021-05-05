@@ -2,33 +2,33 @@ package dolibar.entity;
 
 public class Proveedor extends Tercero {
 
-    private int CodigoProvedor;
-    private EtiquetaCategoria Catprovedor;
-    private String CodBarras;
+    private int codigoProvedor;
+    private EtiquetaCategoria catProvedor;
+    private String codBarras;
     private Tercero tercero;
 
     public int getCodigoProvedor() {
-        return CodigoProvedor;
+        return codigoProvedor;
     }
 
     public void setCodigoProvedor(int CodigoProvedor) {
-        this.CodigoProvedor = CodigoProvedor;
+        this.codigoProvedor = CodigoProvedor;
     }
 
     public EtiquetaCategoria getCatprovedor() {
-        return Catprovedor;
+        return catProvedor;
     }
 
     public void setCatprovedor(EtiquetaCategoria Catprovedor) {
-        this.Catprovedor = Catprovedor;
+        this.catProvedor = Catprovedor;
     }
 
     public String getCodBarras() {
-        return CodBarras;
+        return codBarras;
     }
 
     public void setCodBarras(String CodBarras) {
-        this.CodBarras = CodBarras;
+        this.codBarras = CodBarras;
     }
 
     public Tercero getTercero() {
@@ -41,7 +41,7 @@ public class Proveedor extends Tercero {
 
     @Override
     public String toString() {
-        return "Proveedor CodigoProvedor=" + CodigoProvedor + ", Catprovedor=" + Catprovedor + ", CodBarras=" + CodBarras + ", tercero=" + tercero;
+        return "Proveedor codigoProvedor=" + codigoProvedor + ", Catprovedor=" + catProvedor + ", CodBarras=" + codBarras + ", tercero=" + tercero;
     }
 
 }
