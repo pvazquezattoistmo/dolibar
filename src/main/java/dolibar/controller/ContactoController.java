@@ -6,6 +6,7 @@
 package dolibar.controller;
 
 import dolibar.entity.Contacto;
+import dolibar.service.ContactoRepositorioImpl;
 import dolibar.service.Repositorio;
 import java.util.List;
 
@@ -14,7 +15,7 @@ import java.util.List;
  * @author PC
  */
 public class ContactoController {
-    
+
     Repositorio<Contacto> repositorio;
 
     public List<Contacto> listado() {
@@ -22,11 +23,12 @@ public class ContactoController {
     }
 
     public void agregar(Contacto contacto) {
+        repositorio = new ContactoRepositorioImpl();
         repositorio.guardar(contacto);
     }
 
     public Contacto buscarId(int id) {
         return repositorio.buscarId(id);
     }
-    
+
 }

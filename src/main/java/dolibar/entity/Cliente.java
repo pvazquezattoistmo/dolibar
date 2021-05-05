@@ -1,5 +1,4 @@
 package dolibar.entity;
-//holaaaaa
 
 public class Cliente extends Tercero {
 

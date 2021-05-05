@@ -6,6 +6,7 @@
 package dolibar.controller;
 
 import dolibar.entity.EtiquetaCategoria;
+import dolibar.service.EtiquetaRepositorioImpl;
 import dolibar.service.Repositorio;
 import java.util.List;
 
@@ -18,10 +19,12 @@ public class EtiquetaController {
     Repositorio<EtiquetaCategoria> repositorio;
 
     public List<EtiquetaCategoria> listado() {
+
         return repositorio.listar();
     }
 
     public void agregar(EtiquetaCategoria etiquetaCategoria) {
+        repositorio = new EtiquetaRepositorioImpl();
         repositorio.guardar(etiquetaCategoria);
     }
 

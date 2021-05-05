@@ -7,6 +7,7 @@ package dolibar.controller;
 
 import dolibar.entity.Tercero;
 import dolibar.service.Repositorio;
+import dolibar.service.TerceroRepositorioImpl;
 import java.util.List;
 
 /**
@@ -22,6 +23,7 @@ public class TerceroController {
     }
 
     public void agregar(Tercero tercero) {
+        repositorio = new TerceroRepositorioImpl();
         repositorio.guardar(tercero);
     }
 

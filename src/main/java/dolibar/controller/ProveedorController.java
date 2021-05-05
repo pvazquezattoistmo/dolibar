@@ -6,6 +6,7 @@
 package dolibar.controller;
 
 import dolibar.entity.Proveedor;
+import dolibar.service.ProveedorRepositorioImp;
 import dolibar.service.Repositorio;
 import java.util.List;
 
@@ -14,7 +15,7 @@ import java.util.List;
  * @author PC
  */
 public class ProveedorController {
-    
+
     Repositorio<Proveedor> repositorio;
 
     public List<Proveedor> listado() {
@@ -22,11 +23,12 @@ public class ProveedorController {
     }
 
     public void agregar(Proveedor proveedor) {
+        repositorio = new ProveedorRepositorioImp();
         repositorio.guardar(proveedor);
     }
 
     public Proveedor buscarId(int id) {
         return repositorio.buscarId(id);
     }
-    
+
 }

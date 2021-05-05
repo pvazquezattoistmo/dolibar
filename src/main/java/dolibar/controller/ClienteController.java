@@ -6,6 +6,7 @@
 package dolibar.controller;
 
 import dolibar.entity.Cliente;
+import dolibar.service.ClienteRepositorioImpl;
 import dolibar.service.Repositorio;
 import java.util.List;
 
@@ -22,6 +23,7 @@ public class ClienteController {
     }
 
     public void agregar(Cliente cliente) {
+        repositorio = new ClienteRepositorioImpl();
         repositorio.guardar(cliente);
     }
 

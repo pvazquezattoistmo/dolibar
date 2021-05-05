@@ -157,7 +157,7 @@ public class ContactoRepositorioImpl implements Repositorio<Contacto> {
             stm.setBoolean(14, t.isCorreoMasivo());
 
             stm.setInt(15, t.getCategorias().getId());
-            
+
             Date date = new Date();
             java.sql.Date data = new java.sql.Date(date.getTime());
             stm.setDate(16, data);

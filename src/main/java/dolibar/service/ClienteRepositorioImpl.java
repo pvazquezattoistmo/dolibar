@@ -45,7 +45,7 @@ public class ClienteRepositorioImpl implements Repositorio<Cliente> {
                 Repositorio<Tercero> tercero = new TerceroRepositorioImpl();
                 Tercero terco = tercero.buscarId(rs.getInt("id_tercero"));
                 c.setTercero(terco);
-                
+
                 etiquetas.add(c);
             }
         } catch (SQLException ex) {

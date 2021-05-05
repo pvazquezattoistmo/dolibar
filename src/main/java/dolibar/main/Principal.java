@@ -30,7 +30,7 @@ public class Principal {
         try (Connection conn = ConexionBaseDatos.getInstance()) {
             System.out.println("===================== Etiqueta =====================");
             EtiquetaController etiquetaController = new EtiquetaController();
-
+            /*
             EtiquetaCategoria etiqueta1 = new EtiquetaCategoria();
             etiqueta1.setReferencia("123");
             etiqueta1.setDescripcion("prueba 1");
@@ -48,13 +48,13 @@ public class Principal {
             etiqueta3.setDescripcion("prueba 1");
             etiqueta3.setTipo("proveedor");
             etiquetaController.agregar(etiqueta3);
-
+             */
             List<EtiquetaCategoria> categorias = etiquetaController.listado();
             categorias.stream().forEach(x -> System.out.println(x));
 
             System.out.println("===================== Tercero =====================");
             TerceroController terceroController = new TerceroController();
-
+            /*
             Tercero tercero1 = new Tercero();
             tercero1.setNombreSimple("Jesus Alberto");
             tercero1.setTipoTercero("prueba2");
@@ -96,13 +96,13 @@ public class Principal {
             tercero3.setFormaJuridica("djdklal");
             tercero3.setInconterms("sdfsdfs");
             terceroController.agregar(tercero3);
-
+             */
             List<Tercero> terceros = terceroController.listado();
             terceros.stream().forEachOrdered(x -> System.out.println(x));
 
             System.out.println("=====================insertar contacto =====================");
             ContactoController contactoController = new ContactoController();
-
+            /*
             Contacto contacto1 = new Contacto();
             contacto1.setApellido("Prueba");
             contacto1.setNombre("prueba 1");
@@ -171,31 +171,31 @@ public class Principal {
 
             contacto3.setFechaNacimiento(new Date());
             contactoController.agregar(contacto3);
-
+             */
             List<Contacto> contactos = contactoController.listado();
             contactos.stream().forEach(x -> System.out.println(x));
 
             System.out.println("=====================insertar proveedor =====================");
             ProveedorController proveedorController = new ProveedorController();
-
+            /*
             Proveedor proveedor1 = new Proveedor();
             proveedor1.setCatprovedor(etiquetaController.buscarId(1));
             proveedor1.setCodBarras("3541643434");
             proveedor1.setTercero(terceroController.buscarId(1));
             proveedorController.agregar(proveedor1);
-
+             */
             List<Proveedor> provee = proveedorController.listado();
             provee.stream().forEach(x -> System.out.println(x));
 
             System.out.println("=====================insertar cliente =====================");
             ClienteController clienteController = new ClienteController();
-
+            /*
             Cliente clieente1 = new Cliente();
             clieente1.setCodCliente(565);
             clieente1.setCatCliente(etiquetaController.buscarId(2));
             clieente1.setTercero(terceroController.buscarId(2));
             clienteController.agregar(clieente1);
-
+             */
             List<Cliente> clien = clienteController.listado();
             clien.stream().forEach(x -> System.out.println(x));
         } catch (Exception e) {

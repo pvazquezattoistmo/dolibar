@@ -11,14 +11,14 @@ import java.util.List;
  *
  * @author PC
  */
-public interface Repositorio <T> {
-    
+public interface Repositorio<T> {
+
     List<T> listar();
-    
+
     T buscarId(int id);
-    
+
     void guardar(T t);
-    
+
     void eliminar(int id);
-    
+
 }

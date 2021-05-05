@@ -86,15 +86,15 @@ public class EtiquetaRepositorioImpl implements Repositorio<EtiquetaCategoria> {
         }
 
         try (PreparedStatement stm = getConnection().prepareStatement(sql)) {
-            
+
             stm.setString(1, t.getReferencia());
             stm.setString(2, t.getDescripcion());
             stm.setString(3, t.getTipo());
-            
+
             stm.executeUpdate();
 
         } catch (SQLException ex) {
-
+            ex.printStackTrace();
         }
     }
 
