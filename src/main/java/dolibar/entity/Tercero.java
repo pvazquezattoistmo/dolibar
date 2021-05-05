@@ -1,4 +1,4 @@
-package dolibarr.models.entity;
+package dolibar.entity;
 
 public class Tercero {
 

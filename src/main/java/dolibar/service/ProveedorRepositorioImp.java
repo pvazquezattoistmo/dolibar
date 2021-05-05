@@ -1,9 +1,9 @@
-package dolibarr.repository;
+package dolibar.service;
 
-import dolibarr.jdbc.ConexionBaseDatos;
-import dolibarr.models.entity.EtiquetaCategoria;
-import dolibarr.models.entity.Proveedor;
-import dolibarr.models.entity.Tercero;
+import dolibar.data.ConexionBaseDatos;
+import dolibar.entity.EtiquetaCategoria;
+import dolibar.entity.Proveedor;
+import dolibar.entity.Tercero;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

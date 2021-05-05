@@ -1,4 +1,4 @@
-package dolibarr.models.entity;
+package dolibar.entity;
 //holaaaaa
 
 public class Cliente extends Tercero {

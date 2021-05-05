@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package dolibarr.repository;
+package dolibar.service;
 
 import java.util.List;
 

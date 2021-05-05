@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package dolibarr.repository;
+package dolibar.service;
 
-import dolibarr.jdbc.ConexionBaseDatos;
-import dolibarr.models.entity.EtiquetaCategoria;
+import dolibar.data.ConexionBaseDatos;
+import dolibar.entity.EtiquetaCategoria;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

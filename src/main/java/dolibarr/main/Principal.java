@@ -5,18 +5,18 @@
  */
 package dolibarr.main;
 
-import dolibarr.jdbc.ConexionBaseDatos;
-import dolibarr.models.entity.Cliente;
-import dolibarr.models.entity.Contacto;
-import dolibarr.models.entity.EtiquetaCategoria;
-import dolibarr.models.entity.Proveedor;
-import dolibarr.models.entity.Tercero;
-import dolibarr.repository.ClienteRepositorioImpl;
-import dolibarr.repository.ContactoRepositorioImpl;
-import dolibarr.repository.EtiquetaRepositorioImpl;
-import dolibarr.repository.ProveedorRepositorioImp;
-import dolibarr.repository.Repositorio;
-import dolibarr.repository.TerceroRepositorioImpl;
+import dolibar.data.ConexionBaseDatos;
+import dolibar.entity.Cliente;
+import dolibar.entity.Contacto;
+import dolibar.entity.EtiquetaCategoria;
+import dolibar.entity.Proveedor;
+import dolibar.entity.Tercero;
+import dolibar.service.ClienteRepositorioImpl;
+import dolibar.service.ContactoRepositorioImpl;
+import dolibar.service.EtiquetaRepositorioImpl;
+import dolibar.service.ProveedorRepositorioImp;
+import dolibar.service.Repositorio;
+import dolibar.service.TerceroRepositorioImpl;
 import java.sql.Connection;
 import java.util.Date;
 import java.util.List;
