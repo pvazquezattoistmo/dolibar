@@ -5,7 +5,7 @@
  */
 package dolibar.controller;
 
-import dolibar.entity.Tercero;
+import dolibar.entity.Cliente;
 import dolibar.service.Repositorio;
 import java.util.List;
 
@@ -13,19 +13,19 @@ import java.util.List;
  *
  * @author PC
  */
-public class TerceroController {
+public class ClienteController {
 
-    Repositorio<Tercero> repositorio;
+    Repositorio<Cliente> repositorio;
 
-    public List<Tercero> listado() {
+    public List<Cliente> listado() {
         return repositorio.listar();
     }
 
-    public void agregar(Tercero tercero) {
-        repositorio.guardar(tercero);
+    public void agregar(Cliente cliente) {
+        repositorio.guardar(cliente);
     }
 
-    public Tercero buscarId(int id) {
+    public Cliente buscarId(int id) {
         return repositorio.buscarId(id);
     }
 

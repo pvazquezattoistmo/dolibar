@@ -5,18 +5,17 @@
  */
 package dolibar.main;
 
+import dolibar.controller.ClienteController;
+import dolibar.controller.ContactoController;
+import dolibar.controller.EtiquetaController;
+import dolibar.controller.ProveedorController;
+import dolibar.controller.TerceroController;
 import dolibar.data.ConexionBaseDatos;
 import dolibar.entity.Cliente;
 import dolibar.entity.Contacto;
 import dolibar.entity.EtiquetaCategoria;
 import dolibar.entity.Proveedor;
 import dolibar.entity.Tercero;
-import dolibar.service.ClienteRepositorioImpl;
-import dolibar.service.ContactoRepositorioImpl;
-import dolibar.service.EtiquetaRepositorioImpl;
-import dolibar.service.ProveedorRepositorioImp;
-import dolibar.service.Repositorio;
-import dolibar.service.TerceroRepositorioImpl;
 import java.sql.Connection;
 import java.util.Date;
 import java.util.List;
@@ -29,181 +28,175 @@ public class Principal {
 
     public static void main(String[] args) {
         try (Connection conn = ConexionBaseDatos.getInstance()) {
+            System.out.println("===================== Etiqueta =====================");
+            EtiquetaController etiquetaController = new EtiquetaController();
 
-            Repositorio<EtiquetaCategoria> cat = new EtiquetaRepositorioImpl();
-            System.out.println("=====================insertar etiqueta =====================");
-            /*
-            EtiquetaCategoria c1 = new EtiquetaCategoria();
-            c1.setReferencia("123");
-            c1.setDescripcion("prueba 1");
-            c1.setTipo("proveedor");
-            cat.guardar(c1);
+            EtiquetaCategoria etiqueta1 = new EtiquetaCategoria();
+            etiqueta1.setReferencia("123");
+            etiqueta1.setDescripcion("prueba 1");
+            etiqueta1.setTipo("proveedor");
+            etiquetaController.agregar(etiqueta1);
 
-            EtiquetaCategoria c2 = new EtiquetaCategoria();
-            c2.setReferencia("123");
-            c2.setDescripcion("prueba 1");
-            c2.setTipo("proveedor");
-            cat.guardar(c2);
+            EtiquetaCategoria etiqueta2 = new EtiquetaCategoria();
+            etiqueta2.setReferencia("123");
+            etiqueta2.setDescripcion("prueba 1");
+            etiqueta2.setTipo("proveedor");
+            etiquetaController.agregar(etiqueta2);
 
-            EtiquetaCategoria c3 = new EtiquetaCategoria();
-            c3.setReferencia("123");
-            c3.setDescripcion("prueba 1");
-            c3.setTipo("proveedor");
-            cat.guardar(c3);
-             */
+            EtiquetaCategoria etiqueta3 = new EtiquetaCategoria();
+            etiqueta3.setReferencia("123");
+            etiqueta3.setDescripcion("prueba 1");
+            etiqueta3.setTipo("proveedor");
+            etiquetaController.agregar(etiqueta3);
 
-            List<EtiquetaCategoria> categorias = cat.listar();
+            List<EtiquetaCategoria> categorias = etiquetaController.listado();
             categorias.stream().forEach(x -> System.out.println(x));
 
-            Repositorio<Tercero> terc = new TerceroRepositorioImpl();
-            System.out.println("=====================insertar tercero =====================");
-            /*
-            Tercero t1 = new Tercero();
-            t1.setNombreSimple("Jesus Alberto");
-            t1.setTipoTercero("prueba2");
-            t1.setDireccion("PRUEBA");
-            t1.setCodPostal("89632");
-            t1.setPais("UCRANIA");
-            t1.setProvincia("LuagrPrueba");
-            t1.setRfc("TGYWIEXXXX");
-            t1.setRpimms("IGKSJFSD");
-            t1.setImpuesto("52.6");
-            t1.setFormaJuridica("djdklal");
-            t1.setInconterms("sdfsdfs");
-            terc.guardar(t1);
+            System.out.println("===================== Tercero =====================");
+            TerceroController terceroController = new TerceroController();
 
-            Tercero t2 = new Tercero();
-            t2.setNombreSimple("Jesus Alberto");
-            t2.setTipoTercero("prueba2");
-            t2.setDireccion("PRUEBA");
-            t2.setCodPostal("5454");
-            t2.setPais("UCRANIA");
-            t2.setProvincia("LuagrPrueba");
-            t2.setRfc("TGYWIEXXXX");
-            t2.setRpimms("IGKSJFSD");
-            t2.setImpuesto("52.6");
-            t2.setFormaJuridica("djdklal");
-            t2.setInconterms("sdfsdfs");
-            terc.guardar(t2);
+            Tercero tercero1 = new Tercero();
+            tercero1.setNombreSimple("Jesus Alberto");
+            tercero1.setTipoTercero("prueba2");
+            tercero1.setDireccion("PRUEBA");
+            tercero1.setCodPostal("89632");
+            tercero1.setPais("UCRANIA");
+            tercero1.setProvincia("LuagrPrueba");
+            tercero1.setRfc("TGYWIEXXXX");
+            tercero1.setRpimms("IGKSJFSD");
+            tercero1.setImpuesto("52.6");
+            tercero1.setFormaJuridica("djdklal");
+            tercero1.setInconterms("sdfsdfs");
+            terceroController.agregar(tercero1);
 
-            Tercero t3 = new Tercero();
-            t3.setNombreSimple("Jesus Alberto");
-            t3.setTipoTercero("prueba2");
-            t3.setDireccion("PRUEBA");
-            t3.setCodPostal("545454");
-            t3.setPais("UCRANIA");
-            t3.setProvincia("LuagrPrueba");
-            t3.setRfc("TGYWIEXXXX");
-            t3.setRpimms("IGKSJFSD");
-            t3.setImpuesto("dfsd");
-            t3.setFormaJuridica("djdklal");
-            t3.setInconterms("sdfsdfs");
-            terc.guardar(t3);
-            
-             */
-            List<Tercero> terceros = terc.listar();
+            Tercero tercero2 = new Tercero();
+            tercero2.setNombreSimple("Jesus Alberto");
+            tercero2.setTipoTercero("prueba2");
+            tercero2.setDireccion("PRUEBA");
+            tercero2.setCodPostal("5454");
+            tercero2.setPais("UCRANIA");
+            tercero2.setProvincia("LuagrPrueba");
+            tercero2.setRfc("TGYWIEXXXX");
+            tercero2.setRpimms("IGKSJFSD");
+            tercero2.setImpuesto("52.6");
+            tercero2.setFormaJuridica("djdklal");
+            tercero2.setInconterms("sdfsdfs");
+            terceroController.agregar(tercero2);
+
+            Tercero tercero3 = new Tercero();
+            tercero3.setNombreSimple("Jesus Alberto");
+            tercero3.setTipoTercero("prueba2");
+            tercero3.setDireccion("PRUEBA");
+            tercero3.setCodPostal("545454");
+            tercero3.setPais("UCRANIA");
+            tercero3.setProvincia("LuagrPrueba");
+            tercero3.setRfc("TGYWIEXXXX");
+            tercero3.setRpimms("IGKSJFSD");
+            tercero3.setImpuesto("dfsd");
+            tercero3.setFormaJuridica("djdklal");
+            tercero3.setInconterms("sdfsdfs");
+            terceroController.agregar(tercero3);
+
+            List<Tercero> terceros = terceroController.listado();
             terceros.stream().forEachOrdered(x -> System.out.println(x));
 
-            Repositorio<Contacto> contacs = new ContactoRepositorioImpl();
             System.out.println("=====================insertar contacto =====================");
+            ContactoController contactoController = new ContactoController();
 
-            /*
-            Contacto con1 = new Contacto();
-            con1.setApellido("Prueba");
-            con1.setNombre("prueba 1");
+            Contacto contacto1 = new Contacto();
+            contacto1.setApellido("Prueba");
+            contacto1.setNombre("prueba 1");
 
-            con1.setTercero(terc.buscarId(1));
+            contacto1.setTercero(terceroController.buscarId(1));
 
-            con1.setTitulo("prueba");
-            con1.setPuestoTrabajo("prueba");
-            con1.setDireccion("prueba");
-            con1.setCodigoPostal("prueba");
-            con1.setCiudad("prueba");
-            con1.setPais("prueba");
-            con1.setEstado("prueba");
-            con1.setTelTrabajo("prueba");
-            con1.setCelular("prueba");
-            con1.setEmail("prueba");
-            con1.isCorreoMasivo();
+            contacto1.setTitulo("prueba");
+            contacto1.setPuestoTrabajo("prueba");
+            contacto1.setDireccion("prueba");
+            contacto1.setCodigoPostal("prueba");
+            contacto1.setCiudad("prueba");
+            contacto1.setPais("prueba");
+            contacto1.setEstado("prueba");
+            contacto1.setTelTrabajo("prueba");
+            contacto1.setCelular("prueba");
+            contacto1.setEmail("prueba");
+            contacto1.isCorreoMasivo();
 
-            con1.setCategorias(cat.buscarId(1));
+            contacto1.setCategorias(etiquetaController.buscarId(1));
 
-            con1.setFechaNacimiento(new Date());
-            contacs.guardar(con1);
+            contacto1.setFechaNacimiento(new Date());
+            contactoController.agregar(contacto1);
 
-            Contacto co2 = new Contacto();
-            co2.setApellido("123");
-            co2.setNombre("prueba 1");
+            Contacto contacto2 = new Contacto();
+            contacto2.setApellido("123");
+            contacto2.setNombre("prueba 1");
 
-            co2.setTercero(terc.buscarId(2));
+            contacto2.setTercero(terceroController.buscarId(2));
 
-            co2.setTitulo("sdfdf");
-            co2.setPuestoTrabajo("sdfsdf");
-            co2.setDireccion("sdfsdf");
-            co2.setCodigoPostal("sdfsf");
-            co2.setCiudad("sdfsdf");
-            co2.setPais("sdfsdf");
-            co2.setEstado("sdfsdf");
-            co2.setTelTrabajo("sdfsdf");
-            co2.setCelular("sdfsdf");
-            co2.setEmail("sdfsdf");
-            co2.isCorreoMasivo();
+            contacto2.setTitulo("sdfdf");
+            contacto2.setPuestoTrabajo("sdfsdf");
+            contacto2.setDireccion("sdfsdf");
+            contacto2.setCodigoPostal("sdfsf");
+            contacto2.setCiudad("sdfsdf");
+            contacto2.setPais("sdfsdf");
+            contacto2.setEstado("sdfsdf");
+            contacto2.setTelTrabajo("sdfsdf");
+            contacto2.setCelular("sdfsdf");
+            contacto2.setEmail("sdfsdf");
+            contacto2.isCorreoMasivo();
 
-            co2.setCategorias(cat.buscarId(2));
+            contacto2.setCategorias(etiquetaController.buscarId(2));
 
-            co2.setFechaNacimiento(new Date());
-            contacs.guardar(co2);
+            contacto2.setFechaNacimiento(new Date());
+            contactoController.agregar(contacto2);
 
-            Contacto co3 = new Contacto();
-            co3.setApellido("123");
-            co3.setNombre("prueba 1");
+            Contacto contacto3 = new Contacto();
+            contacto3.setApellido("123");
+            contacto3.setNombre("prueba 1");
 
-            co3.setTercero(terc.buscarId(3));
+            contacto3.setTercero(terceroController.buscarId(3));
 
-            co3.setTitulo("sdfdf");
-            co3.setPuestoTrabajo("sdfsdf");
-            co3.setDireccion("dfsdfs");
-            co3.setCodigoPostal("sdfsdf");
-            co3.setCiudad("sdfsdfsfd");
-            co3.setPais("sdfsfddsf");
-            co3.setEstado("sdfsdf");
-            co3.setTelTrabajo("sdfsfds");
-            co3.setCelular("sdfsdfs");
-            co3.setEmail("sdfsdf");
-            co3.isCorreoMasivo();
+            contacto3.setTitulo("sdfdf");
+            contacto3.setPuestoTrabajo("sdfsdf");
+            contacto3.setDireccion("dfsdfs");
+            contacto3.setCodigoPostal("sdfsdf");
+            contacto3.setCiudad("sdfsdfsfd");
+            contacto3.setPais("sdfsfddsf");
+            contacto3.setEstado("sdfsdf");
+            contacto3.setTelTrabajo("sdfsfds");
+            contacto3.setCelular("sdfsdfs");
+            contacto3.setEmail("sdfsdf");
+            contacto3.isCorreoMasivo();
 
-            co3.setCategorias(cat.buscarId(3));
+            contacto3.setCategorias(etiquetaController.buscarId(3));
 
-            co3.setFechaNacimiento(new Date());
-            contacs.guardar(co3);
-             */
-            List<Contacto> contactos = contacs.listar();
+            contacto3.setFechaNacimiento(new Date());
+            contactoController.agregar(contacto3);
+
+            List<Contacto> contactos = contactoController.listado();
             contactos.stream().forEach(x -> System.out.println(x));
 
-            Repositorio<Proveedor> prov = new ProveedorRepositorioImp();
             System.out.println("=====================insertar proveedor =====================");
+            ProveedorController proveedorController = new ProveedorController();
 
-            /*
-            Proveedor pro1 = new Proveedor();
-            pro1.setCatprovedor(cat.buscarId(1));
-            pro1.setCodBarras("3541643434");
-            pro1.setTercero(terc.buscarId(1));
-            prov.guardar(pro1);
-             */
-            List<Proveedor> provee = prov.listar();
+            Proveedor proveedor1 = new Proveedor();
+            proveedor1.setCatprovedor(etiquetaController.buscarId(1));
+            proveedor1.setCodBarras("3541643434");
+            proveedor1.setTercero(terceroController.buscarId(1));
+            proveedorController.agregar(proveedor1);
+
+            List<Proveedor> provee = proveedorController.listado();
             provee.stream().forEach(x -> System.out.println(x));
 
-            Repositorio<Cliente> cliente = new ClienteRepositorioImpl();
             System.out.println("=====================insertar cliente =====================");
+            ClienteController clienteController = new ClienteController();
 
-            /*
-            Cliente clie = new Cliente();
-            clie.setCodCliente(565);
-            clie.setCatCliente(cat.buscarId(2));
-            clie.setTercero(terc.buscarId(2));
-            cliente.guardar(clie);
-             */
-            List<Cliente> clien = cliente.listar();
+            Cliente clieente1 = new Cliente();
+            clieente1.setCodCliente(565);
+            clieente1.setCatCliente(etiquetaController.buscarId(2));
+            clieente1.setTercero(terceroController.buscarId(2));
+            clienteController.agregar(clieente1);
+
+            List<Cliente> clien = clienteController.listado();
             clien.stream().forEach(x -> System.out.println(x));
         } catch (Exception e) {
             e.printStackTrace();
